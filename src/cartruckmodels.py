@@ -17,10 +17,8 @@ class Cartruck_Simulator():
     self.nb = nb
     self.dta = MNMAPI.mcdta_api()
 
-  def run_simulation(self, link_ID_list):
-    cache_folder = 'cache'
-    self.nb.dump_to_folder(cache_folder)
-    self.dta.initialize(cache_folder)
+  def run_simulation(self, data_folder, link_ID_list):
+    self.dta.initialize(data_folder)
     self.dta.register_links(link_ID_list)
     self.dta.run_whole()
     
@@ -43,4 +41,4 @@ class Cartruck_Simulator():
     return self.dta.get_car_link_speed(start_intervals)
 
   def get_link_truck_speed(self, start_intervals):
-    return self.dta.get_truck_link_inflow(start_intervals)
+    return self.dta.get_truck_link_speed(start_intervals)
