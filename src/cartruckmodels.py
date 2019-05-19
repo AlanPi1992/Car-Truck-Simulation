@@ -12,7 +12,7 @@ import pickle
 ''' Implementation of car-truck simulator '''
 class Cartruck_Simulator():
     def __init__(self, nb):
-        print "Init simulation"
+#         print "Init simulation"
         self.num_assign_interval = nb.config.config_dict['DTA']['max_interval']
         self.nb = nb
         self.dta = MNMAPI.mcdta_api()
